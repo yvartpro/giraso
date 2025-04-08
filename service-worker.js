@@ -15,3 +15,7 @@ self.onactivate = event => {
       }))
     )
 }
+
+self.onfetch = event => {
+    console.log('Fetching...')
+}
