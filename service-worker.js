@@ -9,5 +9,7 @@ self.oninstall = event => {
 }
 
 self.onactivate = event => {
-    caches.keys().then(keys => keys.map(cache => console.log(cache)))
+    event.waitUntil(
+      caches.keys().then(keys => keys.map(cache => console.log(cache)))
+    )
 }
