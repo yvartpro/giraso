@@ -8,11 +8,12 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
     <link rel="manifest" href="./manifest.json"/>
     <meta name="theme-color" content="#148c76"/>
-    <title>Giraso – Rooted in Heritage, Driven by Solutions</title>
+    <title>Giraso – From tradition to innovation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       :root {
         --primary: #148c76;
+        --secondary: #0f715f;
       }
     </style>
   </head>
@@ -20,7 +21,7 @@
     <!-- Header -->
     <header class="bg-white shadow-md sticky top-0 z-10">
       <div class="mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-[var(--primary)]">Giraso</h1>
+        <h1 class="text-2xl font-bold text-[var(--primary)] hover:text-[var(--secondary)]">Giraso</h1>
         <nav class="space-x-4 text-sm">
           <a href="#about" class="text-gray-600 hover:text-[var(--primary)]">About</a>
           <a href="#vision" class="text-gray-600 hover:text-[var(--primary)]">Vision</a>
@@ -33,9 +34,9 @@
     <section class="bg-[url('./bg.jpg')] bg-center bg-cover bg-no-repeat text-white bg-fixed">
       <div class="flex justify-center items-center px-6 py-5 w-full text-center inset-0 bg-black bg-opacity-60">
         <div>
-          <h2 class="text-xl md:text-4xl font-bold mb-4">Rooted in Heritage. Driven by Solutions.</h2>
+          <h2 class="text-xl md:text-4xl font-bold mb-4">From tradition to innovation</h2>
           <p class="text-lg mb-6">Giraso empowers local communities through tailored digital solutions built with care and culture in mind.</p>
-          <a href="#contact" class="bg-white text-[var(--primary)] px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Get in Touch</a>
+          <a href="#contact" class="bg-white text-[var(--primary)] hover:text[--secondary]px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Get in Touch</a>
         </div>
       </div>
     </section>
@@ -54,7 +55,7 @@
           <p class="text-gray-700">To be a leading tech company, rooted in cultural heritage, providing accessible and sustainable solutions that uplift communities and industries.</p>
         </div>
         <div>
-          <h4 class="text-xl font-semibold text-[var(--primary)] mb-2">🎯 Mission</h4>
+          <h4 class="text-xl font-semibold text-[var(--primary)] mb-2"><span class="active:animate-bounce">🎯</span> Mission</h4>
           <p class="text-gray-700">We aim to solve community-specific challenges by delivering custom software that bridges the gap between tradition and technology. Our mission is to empower users through easy-to-use, meaningful tech.</p>
         </div>
       </div>
@@ -109,8 +110,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-200 py-4 text-center text-sm text-gray-600">
-      © 2025 Giraso. Rooted in Heritage. Driven by Solutions.
+    <footer class="bg-gray-200 py-4 text-center text-xs md:text-sm text-gray-600">
+      © 2025 Giraso. From tradition to innovation.
     </footer>
   <script src="app.js"></script>
   </body>
