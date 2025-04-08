@@ -19,7 +19,6 @@ self.onactivate = event => {
 
 //serve caches if cached and when offline or fetch over network
 self.onfetch = event => {
-  .log(event.request)
   event.respondWith(
     caches.match(event.request).then(res => res || fetch(event.request))
   )
