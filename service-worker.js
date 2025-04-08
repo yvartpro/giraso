@@ -1,5 +1,5 @@
 const CACHE_NAME = 'giraso-v1'
-const FILES_TO_CACHE = ['./index.html', './logo.jpg']
+const FILES_TO_CACHE = ['./index.html', './bg.jpg']
 
 self.oninstall = event => {
   event.waitUntil(
