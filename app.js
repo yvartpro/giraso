@@ -1,1 +1,0 @@
-if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js',{scope: '/', type: 'classic'}).then(registration => console.log("SW registered.").catch(err => console.error("Error: ", err))

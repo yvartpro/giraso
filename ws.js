@@ -1,0 +1,1 @@
+self.oninstall = event => console.log('Installing')
