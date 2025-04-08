@@ -9,13 +9,18 @@ self.oninstall = event => {
 }
 
 self.onactivate = event => {
-    event.waitUntil(
-      caches.keys().then(keys => keys.map(cache => {
-        if(cache !== CACHE_NAME) caches.delete(cache) //filter cache and keep actual version
-      }))
-    )
+  event.waitUntil(
+    caches.keys().then(keys => keys.map(cache => {
+      if(cache !== CACHE_NAME) caches.delete(cache) //filter cache and keep actual version
+    }))
+  )
+  self.skipWaiting()
 }
 
+//serve caches if cached and when offline or fetch over network
 self.onfetch = event => {
-    console.log('Fetching...')
+  console.log(event.request)
+  event.respondWith(
+    caches.match(event.request).then(res => res || fetch(event.request))
+  )
 }

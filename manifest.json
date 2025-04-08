@@ -1,0 +1,21 @@
+{
+  "name": "Giraso",
+  "short_name": "Giraso",
+  "description": "Giraso is a youth-led tech startup inspired by cultural roots and committed to building impactful solutions. As students and developers, we're focused on solving real problems with smart, intuitive, and accessible digital tools.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#148c76",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
