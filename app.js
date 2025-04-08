@@ -1,5 +1,5 @@
 if('serviceWorker' in navigator){
- console.log(true)
+ navigator.serviceWorker.register( registration => console.log('Service worker registered: ', registration))
 }else{
     console.log(false)
 }
