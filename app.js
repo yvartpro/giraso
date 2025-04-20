@@ -4,16 +4,22 @@ if('serviceWorker' in navigator){
 }
 
 //notify user
-const notifyUser = () => { 
+const notifyUser = () => {
  if("Notification" in window) {
    if(Notification.permission === "granted"){
-      new Notification("Giraso",{
-        body: "You have a new message",
-        icon: "icon.png"
+        navigator.serviceWorker.ready
+        .then(r =>{
+          r.showNotification("Giraso",
+            body: "A new message arrives",
+            icon: "icon/icon.png",
+            vibrate : [200, 100, 200],
+            tag: "msg-notification"
+          )
+        })
       })
     }else{
-      Notification.requestPermission().
-      then(perm =>{
+      Notification.requestPermission()
+      .then(perm =>{
         if(perm === "granted") {
           new Notification("Giraso",{
             body: "Activation fast",
