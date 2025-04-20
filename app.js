@@ -7,17 +7,16 @@ if('serviceWorker' in navigator){
 const notifyUser = () => {
  if("Notification" in window) {
    if(Notification.permission === "granted"){
-        navigator.serviceWorker.ready
-        .then(r =>{
-          r.showNotification("Giraso",
-            {
-              body: "A new message arrives",
-              icon: "icon/icon.png",
-              vibrate : [200, 100, 200],
-              tag: "msg-notification"
-            }
-          )
-        })
+      navigator.serviceWorker.ready
+      .then(r =>{
+         r.showNotification("Giraso",
+          {
+            body: "A new message arrives",
+            icon: "icon/icon.png",
+            vibrate : [200, 100, 200],
+            tag: "msg-notification"
+          }
+        )
       })
     }else{
       Notification.requestPermission()
