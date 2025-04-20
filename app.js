@@ -14,9 +14,11 @@ if("Notification" in window) {
     Notification.requestPermission().then(perm =>{
       if(perm === "granted") {
         new Notification("Giraso",{
-        body: "Activation fast",
-        icon: "icon.png"
+          body: "Activation fast",
+          icon: "icon.png"
+        })
+      }
     })
   }
-
+}
 console.log(true)
