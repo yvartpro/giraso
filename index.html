@@ -114,6 +114,23 @@
     <footer class="bg-gray-200 py-4 text-center text-xs md:text-sm text-gray-600">
       © 2025 Giraso. From tradition to innovation.
     </footer>
+<!-- Auth Button (Fixed top-right) -->
+<div id="authMenu" class="fixed top-4 right-6 z-20">
+  <button id="authBtn" class="bg-[var(--primary)] text-white px-4 py-2 rounded hover:bg-[var(--secondary)] transition">Login</button>
+</div>
+
+<!-- Auth Modal -->
+<div id="authModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden z-50">
+  <div class="bg-white rounded-lg p-6 w-96 max-w-full shadow-lg">
+    <h3 class="text-lg font-bold text-[var(--primary)] mb-4">Login to Giraso</h3>
+    <input id="authEmail" type="email" placeholder="Email" class="w-full border rounded px-3 py-2 mb-3" />
+    <input id="authPassword" type="password" placeholder="Password" class="w-full border rounded px-3 py-2 mb-4" />
+    <div class="flex justify-between">
+      <button id="loginBtn" class="bg-[var(--primary)] text-white px-4 py-2 rounded hover:bg-[var(--secondary)]">Login</button>
+      <button id="closeAuthModal" class="text-[var(--primary)] font-semibold hover:underline">Cancel</button>
+    </div>
+  </div>
+</div>
   <script src="./js/app.js"></script>
   </body>
 </html>
