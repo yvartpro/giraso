@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Giraso Chat</title>
+</head>
+<body>
+  <div id="auth-section">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="signIn()">Sign In</button>
+  </div>
+  
+  <div id="chat-section" style="display:none">
+    <input type="text" id="message" placeholder="Type a message">
+    <button onclick="sendMessage()">Send</button>
+    <div id="messages"></div>
+  </div>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_DOMAIN",
+      projectId: "YOUR_PROJECT_ID"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    function signIn() {
+      const email = document.getElementById('email').value;
+      const pass = document.getElementById('password').value;
+      auth.signInWithEmailAndPassword(email, pass).then(() => {
+        document.getElementById('auth-section').style.display = 'none';
+        document.getElementById('chat-section').style.display = 'block';
+      });
+    }
+
+    function sendMessage() {
+      const msg = document.getElementById('message').value;
+      db.collection('messages').add({
+        text: msg,
+        user: auth.currentUser.email,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      });
+    }
+
+    db.collection('messages')
+      .orderBy('timestamp')
+      .onSnapshot(snapshot => {
+        const output = document.getElementById('messages');
+        output.innerHTML = "";
+        snapshot.forEach(doc => {
+          const data = doc.data();
+          output.innerHTML += `<p><b>${data.user}:</b> ${data.text}</p>`;
+        });
+      });
+  </script>
+</body>
+</html>
