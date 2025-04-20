@@ -131,6 +131,31 @@
     </div>
   </div>
 </div>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAUR1ZJdSkyIIjBSAb2RblnEur75bpkLZo",
+    authDomain: "giraso-yaga.firebaseapp.com",
+    projectId: "giraso-yaga",
+    storageBucket: "giraso-yaga.firebasestorage.app",
+    messagingSenderId: "464917788226",
+    appId: "1:464917788226:web:f1a2710e1839a27082dfdb"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth();
+
+  // Make Firebase available globally for app.js
+  window.firebaseAuth = auth;
+  window.firebaseMethods = {
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged
+  };
+</script>
   <script src="./js/app.js"></script>
   </body>
 </html>
