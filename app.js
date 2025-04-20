@@ -10,10 +10,12 @@ const notifyUser = () => {
         navigator.serviceWorker.ready
         .then(r =>{
           r.showNotification("Giraso",
-            body: "A new message arrives",
-            icon: "icon/icon.png",
-            vibrate : [200, 100, 200],
-            tag: "msg-notification"
+            {
+              body: "A new message arrives",
+              icon: "icon/icon.png",
+              vibrate : [200, 100, 200],
+              tag: "msg-notification"
+            }
           )
         })
       })
