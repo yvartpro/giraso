@@ -19,3 +19,4 @@ if("Notification" in window) {
     })
   }
 
+console.log(true)
