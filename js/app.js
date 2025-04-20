@@ -14,7 +14,7 @@ const notifyUser = () => {
       navigator.serviceWorker.ready.then(r => {
         r.showNotification("Giraso", {
           body: "A new message arrives",
-          icon: "icon/icon.png",
+          icon: "icons/favicon-32x32.png",
           vibrate: [200, 100, 200],
           tag: "msg-notification"
         });
@@ -24,7 +24,7 @@ const notifyUser = () => {
         if (perm === "granted") {
           new Notification("Giraso", {
             body: "Activation fast",
-            icon: "icon.png"
+            icon: "./icons/favicon-32x32.png"
           });
         }
       });
