@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Location</title>
+  </head>
+  <body>
+    <div>
+      <b>Location is:</b> 
+        <span id="lat"></span>/
+        <span id="long"></span>
+    </div>
+    <script>
+navigator.geolocation.getCurrentPosition(function(position) {
+  document.getElementById('lat').textContent = position.coords.latitude
+  document.getElementById('long').textContent = position.coords.longitude
+},
+
+function(err){
+  console.log(err.message)
+});
+
+    </script>
+  </body>
+</html>
